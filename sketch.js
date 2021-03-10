@@ -5,7 +5,7 @@ let windowHeight = 1080;
 let halfHeight = windowHeight/2;
 let halfWidth = windowWidth/2;
 // let leaves;
-let sky;
+let ocean;
 let shells = [];
 let shell;
 
@@ -23,7 +23,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   leaves = loadImage('GreenLeaves2.jpg');
-  sky = loadImage('delightful-Sky.jpg');
+  ocean = loadImage('glittery_ocean.jpg');
   frameRate(fps);
   // capturer = new CCapture({ format: 'png', framerate: fps });
 
@@ -79,14 +79,14 @@ function draw() {
   push();
   imageMode(CENTER);
   translate(0, 0, -halfHeight*3.01);
-  image(sky, 0, 0, windowWidth*5, windowHeight*5);
+  image(ocean, 0, 0, windowWidth*4.5, windowHeight*4.5);
   pop();
 
   // +z pink sky
   push();
   imageMode(CENTER);
   translate(0, 0, halfHeight*4.01);
-  image(sky, 0, 0, windowWidth*6, windowHeight*6);
+  image(ocean, 0, 0, windowWidth*5.5, windowHeight*5.5);
   pop();
 
   //rectangles
