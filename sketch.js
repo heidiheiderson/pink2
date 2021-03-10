@@ -95,14 +95,16 @@ function draw() {
 
   rotateX(angle);
 
-  // white rectangle
+  // "white" rectangle
     push();
-    // fill(255, 255, 255);
-    directionalLight(59, 196, 255, -0.5, -0.5, -1);
-    directionalLight(255, 220, 94, 0.5, 0.5, 5);
 
-     pointLight(59, 196, 255, -0.5, -0.5, -1);
-     pointLight(255, 220, 94, 0.5, 0.5, 5);
+    //first side pink
+    directionalLight(255, 156, 192, -0.5, -0.5, -1);
+    //second side teal
+    directionalLight(231, 255, 150, 0.5, 0.5, 5);
+
+    pointLight(255, 156, 192, -0.5, -0.5, -1);
+    pointLight(231, 255, 150, 0.5, 0.5, 5);
   
     translate(0, -100, -100);
     specularMaterial(255);
@@ -129,9 +131,15 @@ function draw() {
 
   angle += 0.0025;
 
-  directionalLight(0, 0, 255, -1, 0, -.444);
-  directionalLight(252, 48, 226, 1, 0, 0);
-  directionalLight(229, 255, 41, 0, 0, -1);
+  //lights on centerpiece
+    //yellow/green
+    directionalLight(229, 255, 41, -1, 0, -1);
+   
+   //purple
+    directionalLight(183, 0, 255, 1, 0, 0);
+    //red
+    
+    directionalLight(252, 48, 48, 0, 0, 1);
 
 
   //
