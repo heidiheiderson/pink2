@@ -9,6 +9,12 @@ let ocean;
 let shells = [];
 let shell;
 
+let sculpture3;
+let sculpture4;
+let sculpture5;
+let sculpture6;
+let lineup;
+
 // the frame rate (frames per second)
 var fps = 30;
 // the canvas capturer instance
@@ -22,7 +28,11 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  leaves = loadImage('GreenLeaves2.jpg');
+  sculpture3 = loadImage('3.png');
+  sculpture4 = loadImage('4.png');
+  sculpture5 = loadImage('5.png');
+  sculpture6 = loadImage('6.png');
+  lineup = loadImage('lineup_pink2_pink noise.png');
   ocean = loadImage('glittery_ocean.jpg');
   frameRate(fps);
   // capturer = new CCapture({ format: 'png', framerate: fps });
@@ -75,19 +85,60 @@ function draw() {
 
   camera(0, 20 + sin(frameCount * (0.05)) * 10, 200 + sin(frameCount * 0.01) * 3000, 0, 0, 0, 0, 1, 0);
 
-  // -z pink sky
-  push();
-  imageMode(CENTER);
-  translate(0, 0, -halfHeight*3.01);
-  image(ocean, 0, 0, windowWidth*4.5, windowHeight*4.5);
-  pop();
+  // -z pink sky, second one you see
+    push();
+    imageMode(CENTER);
+    translate(0, 0, -halfHeight*3.01);
+    image(ocean, 0, 0, windowWidth*4.5, windowHeight*4.5);
+    translate(0, 0, -300);
 
-  // +z pink sky
-  push();
-  imageMode(CENTER);
-  translate(0, 0, halfHeight*4.01);
-  image(ocean, 0, 0, windowWidth*5.5, windowHeight*5.5);
-  pop();
+      push();
+      rotateY(PI);
+      translate(50, 0, 0);
+      image(lineup, 0, 0);
+      lineup.resize(0, halfHeight-100);
+      pop();
+
+      push();
+      translate(halfWidth/2, 0, 0);
+      image(sculpture4, 0, 0);
+      sculpture4.resize(0, halfHeight * 1.5);
+      pop();
+
+      push();
+      translate(-halfWidth/2 - 40, -100, 1);
+      image(sculpture5, 0, 0);
+      sculpture5.resize(0, halfHeight * 1.5);
+      pop();
+
+    pop();
+
+  // +z pink sky, first one you see, both sculptures rainbow
+    push();
+    imageMode(CENTER);
+    translate(0, 0, halfHeight*4.01);
+    image(ocean, 0, 0, windowWidth*5.5, windowHeight*5.5);
+    translate(0, 0, 300);
+
+      push();
+      translate(50, 0, 0);
+      image(lineup, 0, 0);
+      lineup.resize(0, halfHeight-100);
+      pop();
+
+      push();
+      translate(-halfWidth/2, 0, 0);
+      image(sculpture4, 0, 0);
+      sculpture4.resize(0, halfHeight * 1.5);
+      pop();
+
+      push();
+      translate(halfWidth/2, 0, 0);
+      image(sculpture6, 0, 0);
+      sculpture6.resize(0, halfHeight * 1.5);
+      pop();
+
+    pop();
 
   //rectangles
   rectMode(CENTER);
