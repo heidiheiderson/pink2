@@ -190,7 +190,7 @@ function draw() {
     directionalLight(183, 0, 255, 1, 0, 0);
     //red
     
-    directionalLight(252, 48, 48, 0, 0, 1);
+    directionalLight(250, 165, 112, 0, 0, 1);
 
 
   //
@@ -226,7 +226,8 @@ class Shells {
 
   display() {
   scale(1.049); 
-  fill(250, 175, 230);
+  //fill(250, 175, 230);
+  fill(255);
   model(shell);
   }
 }
