@@ -14,6 +14,10 @@ let sculpture4;
 let sculpture5;
 let sculpture6;
 let lineup;
+let pinknoise;
+let hah;
+
+var duration;
 
 // the frame rate (frames per second)
 var fps = 30;
@@ -33,9 +37,12 @@ function setup() {
   sculpture5 = loadImage('5.png');
   sculpture6 = loadImage('6.png');
   lineup = loadImage('lineup_pink2_pink noise.png');
+  pinknoise = loadImage('pink_noise_vi.png')
+  hah = loadImage('hah.png')
   ocean = loadImage('glittery_ocean.jpg');
+
   frameRate(fps);
-  // capturer = new CCapture({ format: 'png', framerate: fps });
+   // capturer = new CCapture({ format: 'png', framerate: fps });
 
   // Create objects
   for (let i = 0; i < 40; i++) {
@@ -48,33 +55,33 @@ function draw() {
 
   //
 
-  //  if (frameCount === 1) {
+   //if (frameCount === 1) {
   //   // start the recording on the first frame
   //   // this avoids the code freeze which occurs if capturer.start is called
   //   // in the setup, since v0.9 of p5.js
-  //   capturer.start();
-  // }
+   // capturer.start();
+  //}
 
-  // if (startMillis == null) {
-  //   startMillis = millis();
-  // }
+   //if (startMillis == null) {
+   // startMillis = millis();
+   //}
 
   // duration in milliseconds
   var duration = 10000;
 
   // compute how far we are through the animation as a value 
   // between 0 and 1.
-  var elapsed = millis() - startMillis;
-  var t = map(elapsed, 0, duration, 0, 1);
+  //var elapsed = millis() - startMillis;
+  //var t = map(elapsed, 0, duration, 0, 1);
 
   // if we have passed t=1 then end the animation.
-  // if (t > 1) {
-  //   noLoop();
-  //   console.log('finished recording.');
-  //   capturer.stop();
-  //   capturer.save();
-  //   return;
-  // }
+   //if (t > 1) {
+    //noLoop();
+    //console.log('finished recording.');
+    //capturer.stop();
+    //capturer.save();
+    //return;
+   //}
   //
 
   noStroke();
@@ -97,6 +104,13 @@ function draw() {
       translate(50, 0, 0);
       image(lineup, 0, 0);
       lineup.resize(0, halfHeight-100);
+      pop();
+
+      push();
+      rotateY(PI);
+      translate(0, 0, 0);
+      image(hah, 25, 500);
+      hah.resize(0, halfHeight-175);
       pop();
 
       push();
@@ -125,6 +139,13 @@ function draw() {
       image(lineup, 0, 0);
       lineup.resize(0, halfHeight-100);
       pop();
+
+      push();
+      translate(0, 0, 0);
+      image(hah, 25, 500);
+      hah.resize(0, halfHeight-175);
+      pop();
+
 
       push();
       translate(-halfWidth/2, 0, 0);
@@ -178,7 +199,13 @@ function draw() {
   rect(0, halfHeight-150, windowWidth, 300);
   rect(halfWidth-50, 0, 100, windowHeight);
   rect(-halfWidth +50, 0, 100, windowHeight);
+   push();
+      translate(100, 0, 100);
+      image(pinknoise, -1000, 325);
+      pinknoise.resize(0, halfHeight-300);
+      pop();
   pop();
+
 
   angle += 0.0025;
 
@@ -203,8 +230,8 @@ function draw() {
   pop();
   
 // handle saving the frame
-  // console.log('capturing frame');
-  // capturer.capture(canvas);
+   //console.log('capturing frame');
+   //capturer.capture(canvas);
 
 }
 
