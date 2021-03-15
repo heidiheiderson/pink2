@@ -37,12 +37,12 @@ function setup() {
   sculpture5 = loadImage('5.png');
   sculpture6 = loadImage('6.png');
   lineup = loadImage('lineup_pink2_pink noise.png');
-  pinknoise = loadImage('pink_noise_vi.png')
+  pinknoise = loadImage('pink noise title left.png')
   hah = loadImage('hah.png')
   ocean = loadImage('glittery_ocean.jpg');
 
   frameRate(fps);
-   // capturer = new CCapture({ format: 'png', framerate: fps });
+    //capturer = new CCapture({ format: 'png', framerate: fps, autoSaveTime: 30 });
 
   // Create objects
   for (let i = 0; i < 40; i++) {
@@ -67,7 +67,7 @@ function draw() {
    //}
 
   // duration in milliseconds
-  var duration = 10000;
+  var duration = 360000;
 
   // compute how far we are through the animation as a value 
   // between 0 and 1.
@@ -178,7 +178,7 @@ function draw() {
     pointLight(255, 156, 192, -0.5, -0.5, -1);
     pointLight(231, 255, 150, 0.5, 0.5, 5);
   
-    translate(0, -100, -100);
+    translate(0, 0, -100);
     specularMaterial(255);
     shininess(20);
     plane(windowWidth-10, windowHeight-80);
@@ -200,10 +200,16 @@ function draw() {
   rect(halfWidth-50, 0, 100, windowHeight);
   rect(-halfWidth +50, 0, 100, windowHeight);
    push();
-      translate(100, 0, 100);
-      image(pinknoise, -1000, 325);
-      pinknoise.resize(0, halfHeight-300);
-      pop();
+      translate(-1800, -100, 0);
+      image(pinknoise, 0, 0);
+      pinknoise.resize(0, halfHeight);
+    pop();
+      push();
+      rotateY(PI);
+      translate(-1800, -100, 0);
+      image(pinknoise, 0, 0);
+      pinknoise.resize(0, halfHeight);
+    pop();
   pop();
 
 
